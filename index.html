@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmos | Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="logo" href="#">☀ atmos<span>.</span></a>
+        <span class="live"><i></i> LIVE WEATHER</span>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+            <h1>Weather, at a glance<span>.</span></h1>
+            <p>Real-time conditions and a five-day forecast for your city.</p>
+        </section>
+
+        <form id="search-form">
+            <input id="city-input" placeholder="Enter a city, e.g. Hyderabad"
+                   aria-label="City name" maxlength="100" required>
+            <button id="search-btn">Search →</button>
+        </form>
+
+        <p id="status" role="status" aria-live="polite">Search for a city to begin.</p>
+
+        <section id="weather" hidden>
+            <article class="current-card">
+                <div class="top">
+                    <div>
+                        <p class="eyebrow">CURRENT CONDITIONS</p>
+                        <h2 id="city-name">—</h2>
+                        <p id="date" class="muted"></p>
+                    </div>
+                    <div>
+                        <button id="celsius" class="unit active">°C</button>
+                        <button id="fahrenheit" class="unit">°F</button>
+                    </div>
+                </div>
+
+                <div class="main-weather">
+                    <div>
+                        <div id="temperature" class="temperature">—°</div>
+                        <h3 id="description">—</h3>
+                        <p id="feels" class="muted"></p>
+                    </div>
+                    <div id="icon" class="weather-icon">☀️</div>
+                </div>
+
+                <div class="stats">
+                    <div><span>💨 WIND</span><strong id="wind">—</strong></div>
+                    <div><span>💧 HUMIDITY</span><strong id="humidity">—</strong></div>
+                    <div><span>🌡 PRESSURE</span><strong id="pressure">—</strong></div>
+                </div>
+            </article>
+
+            <section class="forecast-section">
+                <p class="eyebrow">PLAN AHEAD</p>
+                <h2>5-day forecast</h2>
+                <div id="forecast" class="forecast-grid"></div>
+            </section>
+        </section>
+
+        <section id="welcome" class="welcome">
+            <div>🌤️</div>
+            <h2>Your forecast starts here</h2>
+            <p>Search for a city to discover its current weather and five-day forecast.</p>
+            <div class="cities">
+                <button data-city="Hyderabad">Hyderabad</button>
+                <button data-city="London">London</button>
+                <button data-city="Tokyo">Tokyo</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>Built with HTML, CSS & JavaScript · Weather data by Open-Meteo</footer>
+</body>
+</html>
